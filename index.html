@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosso fio do tempo</title>
+
+<!--
+  SEGURANÇA: este site não carrega nenhum recurso externo (sem CDN, sem
+  fontes do Google, sem scripts de terceiros). Tudo — fontes, CSS, JS,
+  fotos, vídeos e áudios — fica dentro deste mesmo repositório.
+  A política abaixo bloqueia qualquer tentativa de carregar ou enviar
+  algo para fora deste domínio, mesmo que alguém injete um link malicioso.
+-->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  img-src 'self' data:;
+  media-src 'self';
+  font-src 'self';
+  style-src 'self' 'unsafe-inline';
+  script-src 'self';
+  connect-src 'none';
+  object-src 'none';
+  base-uri 'self';
+  form-action 'none';
+  frame-ancestors 'none';
+  upgrade-insecure-requests;
+">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hero" id="topo">
+  <p class="hero-eyebrow">um arquivo só nosso</p>
+  <h1 class="hero-title">Nosso fio<br>do tempo</h1>
+  <p class="hero-sub">Cada mês, um nó nesse fio. Toque em um para abrir.</p>
+</header>
+
+<main>
+  <div class="thread-wrap">
+    <svg class="thread-svg" id="threadSvg" preserveAspectRatio="none" aria-hidden="true">
+      <path id="threadPath" class="thread-path" />
+    </svg>
+    <ol class="timeline" id="timeline" aria-label="Linha do tempo de momentos">
+      <!-- os meses são inseridos aqui pelo js/app.js -->
+    </ol>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>feito com cuidado, mês a mês.</p>
+</footer>
+
+<!-- visualizador de mídia em tela cheia (foto/vídeo) -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">✕</button>
+  <div class="lightbox-stage" id="lightboxStage"></div>
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
